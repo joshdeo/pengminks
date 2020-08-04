@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengminks</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<div class="logo">
+    <h3>PENGMINKS</h3>
+    <div class="cart-logo">
+        <i class="fa fa-shopping-cart"> 1 </i>
+    </div>
+</div>
+
+<body>
+    <nav role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <a href="index.html">
+                    <li>Home</li>
+                </a>
+                <a>
+                    <li class="product" onclick="productToggle()"> + Products</li>
+                </a>
+                <div class="sandwich-toggle">
+                    <a href="lashes.html">
+                        <li>Lashes</li>
+                    </a>
+                    <a href="lipgloss.html">
+                        <li>Lipgloss</li>
+                    </a>
+                    <a href="tweezers.html">
+                        <li>Tweezers</li>
+                    </a>
+                </div>
+                <a href="#">
+                    <li>Contact</li>
+                </a>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="lash-container">
+        <div class="faux-mink">
+            <img src="/images/lash2.jpg" alt="">
+            <div class="faux-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consequatur aut assumenda quos
+                    consectetur qui magnam voluptatibus, aliquid quo corrupti provident veritatis impedit vel ad
+                    voluptas officiis odio accusantium debitis.</p>
+            </div>
+            <div class="faux-price">
+                $39.99
+            </div>
+            <button>ADD TO CART</button>
+        </div>
+        <div class="real-mink">
+            <img src="/images/lashes.jpg" alt="">
+            <div class="real-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consequatur aut assumenda quos
+                    consectetur qui magnam voluptatibus, aliquid quo corrupti provident veritatis impedit vel ad
+                    voluptas officiis odio accusantium debitis.</p>
+            </div>
+            <div class="real-price">
+                $39.99
+            </div>
+            <button>ADD TO CART</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

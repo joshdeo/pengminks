@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengminks</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<div class="logo">
+    <h3>PENGMINKS</h3>
+    <div class="cart-logo">
+        <i class="fa fa-shopping-cart"> 1 </i>
+    </div>
+</div>
+
+<body>
+    <nav role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <a href="index.html">
+                    <li>Home</li>
+                </a>
+                <a>
+                    <li class="product" onclick="productToggle()"> + Products</li>
+                </a>
+                <div class="sandwich-toggle">
+                    <a href="lashes.html">
+                        <li>Lashes</li>
+                    </a>
+                    <a href="lipgloss.html">
+                        <li>Lipgloss</li>
+                    </a>
+                    <a href="tweezers.html">
+                        <li>Tweezers</li>
+                    </a>
+                </div>
+                <a href="#">
+                    <li>Contact</li>
+                </a>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="tweezer-container">
+        <div class="tweezer">
+            <img src="/images/tweezer.jpg" alt="">
+            <div class="tweezer-description">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatum officia quidem id
+                    velit, cupiditate consequuntur nulla hic, tempore ad veniam, optio itaque consequatur exercitationem
+                    totam. Voluptatum ea ex soluta.</p>
+            </div>
+            <div class="tweezer-info">
+                <div class="tweezer-price">
+                    <div>39.99</div>
+                </div>
+                <button>ADD TO CART</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
