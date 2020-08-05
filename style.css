@@ -262,6 +262,10 @@ html {
     display: none;
 }
 
+.mobile img {
+    border: 1px solid gold;
+}
+
 @-webkit-keyframes fade {
     from {
         opacity: .4
@@ -282,6 +286,113 @@ html {
     }
 }
 
+/* PRODUCTS PAGE */
+
+/* LASHES */
+
+.lash-container {
+    display: flex;
+    margin-top: 5rem;
+    flex-direction: column;
+    width: 100%;
+}
+
+.faux-mink {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.faux-description {
+    color: white;
+    text-align: center;
+}
+
+.faux-price {
+    color: white;
+}
+
+.real-price {
+    color: white;
+}
+
+.real-mink {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.real-description {
+    color: white;
+    text-align: center;
+}
+
+.lash-container img {
+    height: 15rem;
+    width: 20rem;
+}
+
+/* TWEEZER */
+
+.tweezer {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.tweezer img {
+    margin: auto;
+    height: 15rem;
+}
+
+.tweezer-description {
+    color: white;
+    text-align: center;
+    margin: auto;
+}
+
+.tweezer-price {
+    margin-left: 1.5rem;
+}
+
+.tweezer-info {
+    margin: auto;
+}
+
+/* LIP GLOSS */
+
+.gloss-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.gloss-container img {
+    margin: auto;
+    height: 15rem;
+}
+
+.gloss-text {
+    color: white;
+    text-align: center;
+    margin: auto;
+}
+
+.gloss-price {
+    color: white;
+    text-align: center;
+}
+
+.gloss-description {
+    color: white;
+    text-align: center;
+}
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
@@ -333,92 +444,61 @@ html {
     }
 }
 
-/* PRODUCTS PAGE */
+@media only screen and (min-width: 949px) {
 
-/* LASHES */
+    nav {
+        margin-bottom: 5rem;
+    }
 
-.lash-container {
-    display: flex;
-    margin-top: 5rem;
-    flex-direction: column;
-    width: 100%;
+    .lash-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+    }
+
+    .faux-mink {
+        padding: 50px;
+    }
+
+    .real-mink {
+        padding: 50px;
+    }
+
+    .faux-description {
+        max-width: 950px;
+    }
+
+    .real-description {
+        max-width: 950px;
+    }
 }
 
-.faux-mink {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5rem;
+@media only screen and (min-width: 949px) {
+
+    nav {
+        margin-bottom: 5rem;
+    }
+
+    .gloss-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+    }
 }
 
-.faux-description {
-    color: white;
-    text-align: center;
+@media only screen and (min-width: 949px) {
+
+    .gloss-text {
+        max-width: 950px;
+    }
 }
 
-.real-mink {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@media only screen and (min-width: 949px) {
+
+    .tweezer-description {
+        max-width: 950px;
+    }
 }
 
-.real-description {
-    color: white;
-    text-align: center;
-}
-
-.lash-container img {
-    height: 15rem;
-    width: 20rem;
-}
-
-/* TWEEZER */
-
-.tweezer {
-    margin-top: 5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-}
-
-.tweezer img {
-    margin: auto;
-    height: 15rem;
-}
-
-.tweezer-description {
-    color: white;
-    text-align: center;
-}
-
-.tweezer-price {
-    margin-left: 1.5rem;
-}
-
-.tweezer-info {
-    margin: auto;
-}
-
-/* LIP GLOSS */
-
-.gloss-container {
-    margin-top: 5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-}
-.gloss-image {
-    margin: auto;
-}
-
-.gloss-description {
-    margin: auto;
-}
-
-.gloss-container img {
-    height: 15rem;
-}
