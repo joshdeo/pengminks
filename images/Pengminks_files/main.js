@@ -166,32 +166,10 @@ function totalCost(product) {
 function displayCart() {
   let cartItems = localStorage.getItem('productsInCart');
   cartItems = JSON.parse(cartItems);
-  let productContainer = document.querySelector(".small-container");
+  let productContainer = document.querySelector('.products-container');
   if (cartItems && productContainer) {
-    productContainer.innerHTML = ' ';
-    Object.values(cartItems).map(item => {
-      productContainer.innerHTML += `
-      <table>
-      <tr>
-          <td>
-              <div class="cart-info">
-                  <img src="./images/${item.tag}.jpg" alt="">
-                  <div>
-                      <p>${item.name}</p>
-                      <br>
-                      <a href="">REMOVE</a>
-                  </div>
-              </div>
-          </td>
-          <td><input type="${item.inCart}"></td>
-          <td>$${item.price}</td>
-      </tr>
-  </table>
-      `
-    });
-
-
+    console.log('running');
   }
-};
+}
 onLoadCartNumbers();
 displayCart();
