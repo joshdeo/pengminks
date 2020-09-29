@@ -167,6 +167,8 @@ function displayCart() {
   let cartItems = localStorage.getItem('productsInCart');
   cartItems = JSON.parse(cartItems);
   let productContainer = document.querySelector(".small-container");
+  let totalsContainer = document.querySelector('.total');
+  let cartCost = localStorage.getItem('totalCost')
   if (cartItems && productContainer) {
     productContainer.innerHTML = ' ';
     Object.values(cartItems).map(item => {
@@ -183,13 +185,14 @@ function displayCart() {
                   </div>
               </div>
           </td>
-          <td><input type="${item.inCart}"></td>
-          <td>$${item.price}</td>
+          <td><input type="number" value ="${item.inCart}"></td>
+          <td>$${item.inCart * item.price}</td>
       </tr>
   </table>
       `
+    totalsContainer.innerHTML = `
+    <h5> total : $${cartCost}</h5>`
     });
-
 
   }
 };
