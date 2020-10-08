@@ -84,14 +84,14 @@ for (let i = 0; i < tweezerAdd.length; i++) {
 // lashes
 
 let lashes = [{
-    name: 'Faux Lashes',
-    tag: 'lash2',
+    name: 'fauxlashes',
+    tag: 'fauxlashes',
     price: 80,
     inCart: 0
   },
   {
-    name: 'Real Lashes',
-    tag: 'lashes',
+    name: 'reallashes',
+    tag: 'reallashes',
     price: 80,
     inCart: 0
   }
@@ -116,17 +116,24 @@ function onLoadCartNumbers() {
   }
 }
 
-function cartNumber(product) {
+function cartNumber(product, action) {
   let productNumbers = localStorage.getItem('cartNumbers');
-
   productNumbers = parseInt(productNumbers);
-  if (productNumbers) {
+
+  let cartItems = localStorage.getItem('productsInCart');
+  cartItems = JSON.parse(cartItems);
+
+
+  if (action === "decrease") {
+    localStorage.setItem('cartNumbers', productNumbers - 1);
+    document.querySelector('.cart-logo i').textContent = productNumbers - 1;
+  } else if (productNumbers) {
     localStorage.setItem('cartNumbers', productNumbers + 1);
-    document.querySelector('.fa-shopping-cart').textContent = productNumbers + 1;
+    document.querySelector('.cart-logo i').textContent = productNumbers + 1;
   } else {
     localStorage.setItem('cartNumbers', 1);
-    document.querySelector('.fa-shopping-cart').textContent = 1;
-  }
+    document.querySelector('.cart-logo i').textContent = 1;
+  };
 
   setItems(product);
 };
@@ -153,9 +160,13 @@ function setItems(product) {
   localStorage.setItem('productsInCart', JSON.stringify(cartItems));
 }
 
-function totalCost(product) {
+function totalCost(product, action) {
   let cartCost = localStorage.getItem('totalCost');
-  if (cartCost !== null) {
+
+  if (action === "decrease") {
+    cartCost = parseInt(cartCost);
+    localStorage.setItem('totalCost', cartCost - product.price);
+  } else if (cartCost !== null) {
     cartCost = parseInt(cartCost);
     localStorage.setItem('totalCost', cartCost + product.price);
   } else {
@@ -181,20 +192,99 @@ function displayCart() {
                   <div>
                       <p>${item.name}</p>
                       <br>
-                      <a href="">REMOVE</a>
+                      <a href="" class="remove"><i class="fa fa-times"></i></a>
                   </div>
               </div>
           </td>
-          <td><input type="number" value ="${item.inCart}"></td>
-          <td>$${item.inCart * item.price}</td>
+          <td>
+            <i class="fa fa-angle-left"></i> 
+             <span>${item.inCart}</span>
+            <i class="fa fa-angle-right"></i>
+          </td>
+           <td>$${item.inCart * item.price}</td>
       </tr>
   </table>
       `
-    totalsContainer.innerHTML = `
-    <h5> total : $${cartCost}</h5>`
     });
 
+    totalsContainer.innerHTML = `
+    <h5> total : $${cartCost}</h5>`;
   }
+  deleteButtons();
+  manageQuantity();
 };
+
+function deleteButtons() {
+  let deleteButton = document.querySelectorAll('tr .remove');
+  let productName;
+  let productNumbers = localStorage.getItem('cartNumbers');
+  let cartItems = localStorage.getItem('productsInCart');
+  cartItems = JSON.parse(cartItems);
+  let cartCost = localStorage.getItem('totalCost');
+
+  for (let i = 0; i < deleteButton.length; i++) {
+    deleteButton[i].addEventListener('click', () => {
+      productName = deleteButton[i].parentElement.parentElement.textContent.trim().toLowerCase().replace(/ /g, '');
+      console.log(productName)
+      // console.log(cartItems[productName].name + " " + cartItems[productName].inCart);
+      localStorage.setItem('cartNumbers', productNumbers - cartItems[productName].inCart);
+      localStorage.setItem('totalCost', cartCost - (cartItems[productName].price * cartItems[productName].inCart));
+
+      delete cartItems[productName]
+      localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+
+      displayCart();
+      onLoadCartNumbers();
+    });
+  };
+};
+
+function manageQuantity() {
+  let decreaseButtons = document.querySelectorAll('.fa-angle-left');
+  let increaseButtons = document.querySelectorAll('.fa-angle-right');
+  let currentQuantity = 0;
+  let cartItems = localStorage.getItem('productsInCart');
+  let currentProduct = '';
+  cartItems = JSON.parse(cartItems);
+
+  for (let i = 0; i < decreaseButtons.length; i++) {
+    decreaseButtons[i].addEventListener('click', () => {
+      currentQuantity = decreaseButtons[i].parentElement.querySelector('span').textContent;
+      currentProduct = decreaseButtons[i].parentElement.previousElementSibling.querySelector('p').textContent.toLowerCase().replace(/ /g, '').trim();
+      console.log(currentQuantity);
+      console.log(currentProduct);
+
+      if (cartItems[currentProduct].inCart > 1) {
+        cartItems[currentProduct].inCart -= 1;
+        cartNumber(cartItems[currentProduct], "decrease");
+        totalCost(cartItems[currentProduct], "decrease");
+        localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+        displayCart();
+      }
+
+    });
+  };
+
+  for (let i = 0; i < increaseButtons.length; i++) {
+    increaseButtons[i].addEventListener('click', () => {
+      currentQuantity = increaseButtons[i].parentElement.querySelector('span').textContent;
+
+      currentQuantity = decreaseButtons[i].parentElement.querySelector('span').textContent;
+      currentProduct = decreaseButtons[i].parentElement.previousElementSibling.querySelector('p').textContent.toLowerCase().replace(/ /g, '').trim();
+      console.log(currentQuantity);
+      console.log(currentProduct);
+
+
+      cartItems[currentProduct].inCart += 1;
+      cartNumber(cartItems[currentProduct]);
+      totalCost(cartItems[currentProduct]);
+      localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+      displayCart();
+
+    });
+  };
+
+};
+
 onLoadCartNumbers();
 displayCart();

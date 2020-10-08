@@ -471,6 +471,28 @@ img {
     color: white;
 }
 
+
+
+.testfa {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.cashout-button {
+    max-width: 800px;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fa-angle-right, .fa-angle-left {
+    cursor: pointer;
+}
+
+
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
 
