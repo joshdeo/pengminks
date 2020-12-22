@@ -1,67 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pengminks</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<div class="logo">
+  <div class="logo">
     <h3>PENGMINKS</h3>
     <div class="cart-logo">
-        <a href="cart.html"><i class="fa fa-shopping-cart"> </i></a>
+      <a href="cart.html"><i class="fa fa-shopping-cart"> </i></a>
     </div>
-</div>
+  </div>
 
-<body>
+  <body>
     <nav role="navigation">
-        <div id="menuToggle">
-            <input type="checkbox" />
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul id="menu">
-                <a href="index.html">
-                    <li>Home</li>
-                </a>
-                <a>
-                    <li class="product" onclick="productToggle()"> + Products</li>
-                </a>
-                <div class="sandwich-toggle">
-                    <a href="lashes.html">
-                        <li>Lashes</li>
-                    </a>
-                    <a href="lipgloss.html">
-                        <li>Lipgloss</li>
-                    </a>
-                    <a href="tweezers.html">
-                        <li>Tweezers</li>
-                    </a>
-                </div>
-                <a href="#">
-                    <li>Contact</li>
-                </a>
-            </ul>
-        </div>
+      <div id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <a href="index.html">
+            <li>Home</li>
+          </a>
+          <a>
+            <li class="product" onclick="productToggle()">+ Products</li>
+          </a>
+          <div class="sandwich-toggle">
+            <a href="lashes.html">
+              <li>Lashes</li>
+            </a>
+            <a href="tweezers.html">
+              <li>Tweezers</li>
+            </a>
+          </div>
+          <a href="#">
+            <li>Contact</li>
+          </a>
+        </ul>
+      </div>
     </nav>
 
     <!--Cart-->
 
     <div class="product-headers">
-        <table>
-            <tr>
-                <th>Product</th>
-                <th class="quan">Quantity</th>
-                <th class="sub">Subtotal</th>
-            </tr>
-        </table>
+      <table>
+        <tr>
+          <th>Product</th>
+          <th class="quan">Quantity</th>
+          <th class="sub">Subtotal</th>
+        </tr>
+      </table>
     </div>
 
     <div class="small-container cart-page">
-        <!-- <table>
+      <!-- <table>
             <tr>
                 <td>
                     <div class="cart-info">
@@ -82,15 +81,13 @@
     </div>
 
     <div class="total">
-        <!-- <h5> total : $30,09</h5> -->
+      <!-- <h5> total : $30,09</h5> -->
     </div>
 
     <div class="cashout-button">
-        <button>CHECK OUT</button>
+      <button>CHECK OUT</button>
     </div>
 
-
     <script src="main.js"></script>
-</body>
-
+  </body>
 </html>

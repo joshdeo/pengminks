@@ -29,160 +29,215 @@ function productToggle() {
 }
 
 // local storage - add to cart
-
+/*
 //lip gloss
 
-let products = [{
-    name: 'Pink Gloss',
-    tag: 'gloss',
+let products = [
+  {
+    name: "Pink Gloss",
+    tag: "gloss",
     price: 15,
-    inCart: 0
+    inCart: 0,
   },
 
   {
-    name: 'Blue Gloss',
-    tag: 'gloss',
+    name: "Blue Gloss",
+    tag: "gloss",
     price: 17,
-    inCart: 0
+    inCart: 0,
   },
 
   {
-    name: 'Green Gloss',
-    tag: 'gloss',
+    name: "Green Gloss",
+    tag: "gloss",
     price: 15,
-    inCart: 0
+    inCart: 0,
   },
 ];
 
-let carts = document.querySelectorAll('.add-item'); // <- lipgloss
+
+let carts = document.querySelectorAll(".add-item"); // <- lipgloss
+
 
 for (let i = 0; i < carts.length; i++) {
-  carts[i].addEventListener('click', () => {
+  carts[i].addEventListener("click", () => {
     cartNumber(products[i]);
-    totalCost(products[i])
+    totalCost(products[i]);
   });
-};
+}
+*/
 
 // tweezer
 
-let tweezer = [{
-  name: 'tweezer',
-  tag: 'tweezer',
-  price: 80,
-  inCart: 0
-}];
+let tweezer = [
+  {
+    name: "tweezer",
+    tag: "tweezer",
+    price: 80,
+    inCart: 0,
+  },
+];
 
-let tweezerAdd = document.querySelectorAll('.add-item-tweezer');
+let tweezerAdd = document.querySelectorAll(".add-item-tweezer");
 
 for (let i = 0; i < tweezerAdd.length; i++) {
-  tweezerAdd[i].addEventListener('click', () => {
+  tweezerAdd[i].addEventListener("click", () => {
     cartNumber(tweezer[i]);
-    totalCost(tweezer[i])
+    totalCost(tweezer[i]);
   });
-};
+}
 
 // lashes
 
-let lashes = [{
-    name: 'fauxlashes',
-    tag: 'fauxlashes',
+let lashes = [
+  {
+    name: "flirtatious",
+    tag: "flirtatious",
     price: 80,
-    inCart: 0
+    inCart: 0,
   },
   {
-    name: 'reallashes',
-    tag: 'reallashes',
+    name: "entanglement",
+    tag: "entanglement",
     price: 80,
-    inCart: 0
-  }
+    inCart: 0,
+  },
+  {
+    name: "birthdaybitch",
+    tag: "birthdaybitch",
+    price: 80,
+    inCart: 0,
+  },
+  {
+    name: "bougie",
+    tag: "bougie",
+    price: 80,
+    inCart: 0,
+  },
+  {
+    name: "mamacita",
+    tag: "mamacita",
+    price: 80,
+    inCart: 0,
+  },
+  {
+    name: "foreigner",
+    tag: "foreigner",
+    price: 80,
+    inCart: 0,
+  },
+  {
+    name: "dramaqueen",
+    tag: "dramaqueen",
+    price: 80,
+    inCart: 0,
+  },
+  {
+    name: "playa",
+    tag: "playa",
+    price: 80,
+    inCart: 0,
+  },
+  {
+    name: "trifling",
+    tag: "trifling",
+    price: 80,
+    inCart: 0,
+  },
+  {
+    name: "peng",
+    tag: "peng",
+    price: 80,
+    inCart: 0,
+  },
 ];
 
-let lashAdd = document.querySelectorAll('.add-item-lashes');
+let lashAdd = document.querySelectorAll(".add-item-lashes");
 
 for (let i = 0; i < lashAdd.length; i++) {
-  lashAdd[i].addEventListener('click', () => {
+  lashAdd[i].addEventListener("click", () => {
     cartNumber(lashes[i]);
-    totalCost(lashes[i])
+    totalCost(lashes[i]);
   });
-};
+}
 
 // ADD CART
 
 function onLoadCartNumbers() {
-  let productNumbers = localStorage.getItem('cartNumbers');
+  let productNumbers = localStorage.getItem("cartNumbers");
 
   if (productNumbers) {
-    document.querySelector('.fa-shopping-cart').textContent = productNumbers;
+    document.querySelector(
+      ".fa-shopping-cart"
+    ).textContent = ` ${productNumbers}`;
   }
 }
 
 function cartNumber(product, action) {
-  let productNumbers = localStorage.getItem('cartNumbers');
+  let productNumbers = localStorage.getItem("cartNumbers");
   productNumbers = parseInt(productNumbers);
 
-  let cartItems = localStorage.getItem('productsInCart');
+  let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
 
-
   if (action === "decrease") {
-    localStorage.setItem('cartNumbers', productNumbers - 1);
-    document.querySelector('.cart-logo i').textContent = productNumbers - 1;
+    localStorage.setItem("cartNumbers", productNumbers - 1);
+    document.querySelector(".cart-logo i").textContent = productNumbers - 1;
   } else if (productNumbers) {
-    localStorage.setItem('cartNumbers', productNumbers + 1);
-    document.querySelector('.cart-logo i').textContent = productNumbers + 1;
+    localStorage.setItem("cartNumbers", productNumbers + 1);
+    document.querySelector(".cart-logo i").textContent = productNumbers + 1;
   } else {
-    localStorage.setItem('cartNumbers', 1);
-    document.querySelector('.cart-logo i').textContent = 1;
-  };
+    localStorage.setItem("cartNumbers", 1);
+    document.querySelector(".cart-logo i").textContent = 1;
+  }
 
   setItems(product);
-};
+}
 
 function setItems(product) {
-  let cartItems = localStorage.getItem('productsInCart');
+  let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
 
   if (cartItems != null) {
-
     if (cartItems[product.tag] === undefined) {
       cartItems = {
         ...cartItems,
-        [product.tag]: product
-      }
+        [product.tag]: product,
+      };
     }
     cartItems[product.tag].inCart += 1;
   } else {
     product.inCart = 1;
     cartItems = {
-      [product.tag]: product
-    }
+      [product.tag]: product,
+    };
   }
-  localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+  localStorage.setItem("productsInCart", JSON.stringify(cartItems));
 }
 
 function totalCost(product, action) {
-  let cartCost = localStorage.getItem('totalCost');
+  let cartCost = localStorage.getItem("totalCost");
 
   if (action === "decrease") {
     cartCost = parseInt(cartCost);
-    localStorage.setItem('totalCost', cartCost - product.price);
+    localStorage.setItem("totalCost", cartCost - product.price);
   } else if (cartCost !== null) {
     cartCost = parseInt(cartCost);
-    localStorage.setItem('totalCost', cartCost + product.price);
+    localStorage.setItem("totalCost", cartCost + product.price);
   } else {
-    localStorage.setItem('totalCost', product.price);
+    localStorage.setItem("totalCost", product.price);
   }
-};
+}
 
 function displayCart() {
-  let cartItems = localStorage.getItem('productsInCart');
+  let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
   let productContainer = document.querySelector(".small-container");
-  let totalsContainer = document.querySelector('.total');
-  let cartCost = localStorage.getItem('totalCost')
+  let totalsContainer = document.querySelector(".total");
+  let cartCost = localStorage.getItem("totalCost");
   if (cartItems && productContainer) {
-    productContainer.innerHTML = ' ';
-    Object.values(cartItems).map(item => {
+    productContainer.innerHTML = " ";
+    Object.values(cartItems).map((item) => {
       productContainer.innerHTML += `
       <table>
       <tr>
@@ -204,7 +259,7 @@ function displayCart() {
            <td>$${item.inCart * item.price}</td>
       </tr>
   </table>
-      `
+      `;
     });
 
     totalsContainer.innerHTML = `
@@ -212,45 +267,59 @@ function displayCart() {
   }
   deleteButtons();
   manageQuantity();
-};
+}
 
 function deleteButtons() {
-  let deleteButton = document.querySelectorAll('tr .remove');
+  let deleteButton = document.querySelectorAll("tr .remove");
   let productName;
-  let productNumbers = localStorage.getItem('cartNumbers');
-  let cartItems = localStorage.getItem('productsInCart');
+  let productNumbers = localStorage.getItem("cartNumbers");
+  let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
-  let cartCost = localStorage.getItem('totalCost');
+  let cartCost = localStorage.getItem("totalCost");
 
   for (let i = 0; i < deleteButton.length; i++) {
-    deleteButton[i].addEventListener('click', () => {
-      productName = deleteButton[i].parentElement.parentElement.textContent.trim().toLowerCase().replace(/ /g, '');
-      console.log(productName)
+    deleteButton[i].addEventListener("click", () => {
+      productName = deleteButton[i].parentElement.parentElement.textContent
+        .trim()
+        .toLowerCase()
+        .replace(/ /g, "");
+      console.log(productName);
       // console.log(cartItems[productName].name + " " + cartItems[productName].inCart);
-      localStorage.setItem('cartNumbers', productNumbers - cartItems[productName].inCart);
-      localStorage.setItem('totalCost', cartCost - (cartItems[productName].price * cartItems[productName].inCart));
+      localStorage.setItem(
+        "cartNumbers",
+        productNumbers - cartItems[productName].inCart
+      );
+      localStorage.setItem(
+        "totalCost",
+        cartCost - cartItems[productName].price * cartItems[productName].inCart
+      );
 
-      delete cartItems[productName]
-      localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+      delete cartItems[productName];
+      localStorage.setItem("productsInCart", JSON.stringify(cartItems));
 
       displayCart();
       onLoadCartNumbers();
     });
-  };
-};
+  }
+}
 
 function manageQuantity() {
-  let decreaseButtons = document.querySelectorAll('.fa-angle-left');
-  let increaseButtons = document.querySelectorAll('.fa-angle-right');
+  let decreaseButtons = document.querySelectorAll(".fa-angle-left");
+  let increaseButtons = document.querySelectorAll(".fa-angle-right");
   let currentQuantity = 0;
-  let cartItems = localStorage.getItem('productsInCart');
-  let currentProduct = '';
+  let cartItems = localStorage.getItem("productsInCart");
+  let currentProduct = "";
   cartItems = JSON.parse(cartItems);
 
   for (let i = 0; i < decreaseButtons.length; i++) {
-    decreaseButtons[i].addEventListener('click', () => {
-      currentQuantity = decreaseButtons[i].parentElement.querySelector('span').textContent;
-      currentProduct = decreaseButtons[i].parentElement.previousElementSibling.querySelector('p').textContent.toLowerCase().replace(/ /g, '').trim();
+    decreaseButtons[i].addEventListener("click", () => {
+      currentQuantity = decreaseButtons[i].parentElement.querySelector("span")
+        .textContent;
+      currentProduct = decreaseButtons[i].parentElement.previousElementSibling
+        .querySelector("p")
+        .textContent.toLowerCase()
+        .replace(/ /g, "")
+        .trim();
       console.log(currentQuantity);
       console.log(currentProduct);
 
@@ -258,33 +327,35 @@ function manageQuantity() {
         cartItems[currentProduct].inCart -= 1;
         cartNumber(cartItems[currentProduct], "decrease");
         totalCost(cartItems[currentProduct], "decrease");
-        localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+        localStorage.setItem("productsInCart", JSON.stringify(cartItems));
         displayCart();
       }
-
     });
-  };
+  }
 
   for (let i = 0; i < increaseButtons.length; i++) {
-    increaseButtons[i].addEventListener('click', () => {
-      currentQuantity = increaseButtons[i].parentElement.querySelector('span').textContent;
+    increaseButtons[i].addEventListener("click", () => {
+      currentQuantity = increaseButtons[i].parentElement.querySelector("span")
+        .textContent;
 
-      currentQuantity = decreaseButtons[i].parentElement.querySelector('span').textContent;
-      currentProduct = decreaseButtons[i].parentElement.previousElementSibling.querySelector('p').textContent.toLowerCase().replace(/ /g, '').trim();
+      currentQuantity = decreaseButtons[i].parentElement.querySelector("span")
+        .textContent;
+      currentProduct = decreaseButtons[i].parentElement.previousElementSibling
+        .querySelector("p")
+        .textContent.toLowerCase()
+        .replace(/ /g, "")
+        .trim();
       console.log(currentQuantity);
       console.log(currentProduct);
-
 
       cartItems[currentProduct].inCart += 1;
       cartNumber(cartItems[currentProduct]);
       totalCost(cartItems[currentProduct]);
-      localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+      localStorage.setItem("productsinCart", JSON.stringify(cartItems));
       displayCart();
-
     });
-  };
-
-};
+  }
+}
 
 onLoadCartNumbers();
 displayCart();
