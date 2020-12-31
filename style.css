@@ -294,16 +294,24 @@ html {
 
 /* PRODUCTS PAGE */
 
-/* LASHES */
+/* CONTENT ITEMS */
 
-.lash-container {
+.content-container {
   display: flex;
+  justify-content: center;
   margin-top: 5rem;
-  flex-direction: column;
   width: 100%;
 }
 
-.individual-lashes {
+.lashes {
+  flex-wrap: wrap;
+}
+
+.tweezers {
+  flex-wrap: wrap;
+}
+
+.items {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -312,53 +320,24 @@ html {
   padding: 20px;
 }
 
-.lash-container img {
+.items img {
   height: 15rem;
   width: 20rem;
 }
 
-.lash-container button {
+.content-container button {
   font-weight: 800;
   background-color: white;
   margin: 10px;
   padding: 8px;
 }
 
-.lash-container button:hover {
+.content-container button:hover {
   background-color: #fbe573;
   margin: 10px;
   padding: 8px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
-}
-
-/* TWEEZER */
-
-.tweezer {
-  margin-top: 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-}
-
-.tweezer img {
-  margin: auto;
-  height: 15rem;
-}
-
-.tweezer-description {
-  color: white;
-  text-align: center;
-  margin: auto;
-}
-
-.tweezer-price {
-  margin-left: 1.5rem;
-}
-
-.tweezer-info {
-  margin: auto;
 }
 
 /*cart items */
