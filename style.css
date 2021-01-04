@@ -379,6 +379,10 @@ html {
   color: white;
 }
 
+.products p {
+  position: absolute;
+}
+
 .quantity {
   padding: 25px;
   font-size: 1rem;
@@ -390,6 +394,7 @@ html {
   margin-left: 2rem;
   margin-right: 2rem;
 }
+
 /*cart items */
 /* .product-headers {
   color: black;
