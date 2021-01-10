@@ -1,0 +1,27 @@
+{
+  "name": "pengminks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshdeo/pengminks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshdeo/pengminks/issues"
+  },
+  "homepage": "https://github.com/joshdeo/pengminks#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "stripe": "^8.129.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}

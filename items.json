@@ -1,0 +1,71 @@
+{
+    "lashes": [{
+            "id": 1,
+            "name": "FLIRTATIOUS (40mm)",
+            "price": 80,
+            "imgName": "flirtatious.jpg"
+        },
+        {
+            "id": 2,
+            "name": "ENTANGLEMENT (18mm)",
+            "price": "80 CAD",
+            "imgName": "flirtatious.jpg"
+        },
+        {
+            "id": 3,
+            "name": "BIRTHDAY BITCH (25mm)",
+            "price": 80,
+            "imgName": "birthdaybitch.jpg"
+        },
+        {
+            "id": 4,
+            "name": "BOUGIE (16mm)",
+            "price": 80,
+            "imgName": "bougie.jpg"
+        },
+        {
+            "id": 5,
+            "name": "MAMACITA (17mm)",
+            "price": 80,
+            "imgName": "mamacita.jpg"
+        },
+        {
+            "id": 6,
+            "name": "FOREIGNER (22mm)",
+            "price": 80,
+            "imgName": "foreigner.jpg"
+        },
+        {
+            "id": 7,
+            "name": "DRAMA QUEEN (20mm)",
+            "price": 80,
+            "imgName": "dramaqueen.jpg"
+        },
+        {
+            "id": 8,
+            "name": "PLAYA (16mm)",
+            "price": 80,
+            "imgName": "playa.jpg"
+        },
+        {
+            "id": 9,
+            "name": "TRIFLING (17mm)",
+            "price": 80,
+            "imgName": "trifling.jpg"
+        },
+        {
+            "id": 10,
+            "name": "PENG (25mm)",
+            "price": 80,
+            "imgName": "peng.jpg"
+        }
+
+    ],
+
+    "tweezers": [{
+        "id": 11,
+        "name": "PENG TWEEZER",
+        "price": 80,
+        "imgName": "tweezer.jpg"
+    }]
+}

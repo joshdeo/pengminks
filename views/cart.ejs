@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pengminks</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://checkout.stripe.com/checkout.js" defer></script>
+  <script>
+    var stripePublicKey = '<%= stripePublicKey%>'
+  </script>
+  <script src="https://kit.fontawesome.com/fc012fb089.js" crossorigin="anonymous"></script>
+</head>
+
+<div class="logo">
+  <h3>PENGMINKS</h3>
+  <div class="cart-logo">
+    <a href="cart"><i class="fa fa-shopping-cart"> </i></a>
+  </div>
+</div>
+
+<body>
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <a href="index.html">
+          <li>Home</li>
+        </a>
+        <a>
+          <li class="product" onclick="productToggle()">+ Products</li>
+        </a>
+        <div class="sandwich-toggle">
+          <a href="lashes">
+            <li>Lashes</li>
+          </a>
+          <a href="tweezers">
+            <li>Tweezers</li>
+          </a>
+        </div>
+        <a href="#">
+          <li>Contact</li>
+        </a>
+      </ul>
+    </div>
+  </nav>
+
+  <!--Cart-->
+
+  <div class="product-headers">
+    <table>
+      <tr>
+        <th>Product</th>
+        <th class="quan">Quantity</th>
+        <th class="sub">Subtotal</th>
+      </tr>
+    </table>
+  </div>
+
+  <div class="small-container cart-page">
+    <!-- <table>
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="./images/lashes.jpg" alt="">
+                        <div>
+                            <p>Faux Lashes</p>
+                            <small>$39,99</small>
+                            <br>
+                            <a href="" class="remove"><i class="fa fa-trash"></i></a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number"></td>
+                <input type="number" value ="${item.inCart}">
+                <td>$38,99</td>
+            </tr>
+        </table> -->
+  </div>
+
+  <div class="total">
+    <!-- <h5> total : $30,09</h5> -->
+  </div>
+
+  <div class="cashout-button">
+    <button id="checkout">CHECK OUT</button>
+  </div>
+  <script src="main.js" defer></script>
+</body>
+
+</html>

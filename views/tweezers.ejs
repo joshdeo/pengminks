@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pengminks</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://checkout.stripe.com/checkout.js" defer></script>
+  <script>
+    var stripePublicKey = '<%= stripePublicKey%>'
+  </script>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+
+<div class="logo">
+  <h3>PENGMINKS</h3>
+  <div class="cart-logo">
+    <a href="cart"> <i class="fa fa-shopping-cart"> </i></a>
+  </div>
+</div>
+
+<body>
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <a href="index.html">
+          <li>Home</li>
+        </a>
+        <a>
+          <li class="product" onclick="productToggle()">+ Products</li>
+        </a>
+        <div class="sandwich-toggle">
+          <a href="lashes">
+            <li>Lashes</li>
+          </a>
+          <a href="tweezers">
+            <li>Tweezers</li>
+          </a>
+        </div>
+        <a href="#">
+          <li>Contact</li>
+        </a>
+      </ul>
+    </div>
+  </nav>
+
+  <% items.tweezers.forEach(function(item) { %>
+  <div class="content-container tweezers">
+    <div class="items" data-item-id="<%= item.id%>">
+      <h4><%= item.name %></h4>
+      <img src="./images/<%=item.imgName%> " alt="" />
+      <div class="faux-price"><%= item.price%> </div>
+      <button class="add-item-tweezer">ADD TO CART</button>
+    </div>
+  </div>
+  <%}) %>
+  <script src="main.js" defer></script>
+</body>
+
+</html>
